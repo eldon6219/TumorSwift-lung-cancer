@@ -12,7 +12,7 @@ import joblib
 # model.compile(Adamax(learning_rate= 0.001), loss= 'categorical_crossentropy', metrics= ['accuracy'])
 # with open('models/colon_lung.pkl','rb')as file:
     # model=pickle.load(file)
-model=joblib.load("models\colon_lung.pkl")
+model=joblib.load("colon_lung.pkl")
     
     
 class_labels = ['Colon Adenocarcinoma','Colon Benign Tissue','Lung Adenocarcinoma','Lung Benign Tissue','Lung Squamous Cell Carcinoma']
