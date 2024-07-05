@@ -11,4 +11,4 @@ Jinja2
 MarkupSafe
 Werkzeug
 pickle5
-Click==7.0
+Click
