@@ -15,5 +15,6 @@ Werkzeug
 keras.models
 twilio==7.12.1
 h5py
+waitress==3.0.0
 
 
