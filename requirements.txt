@@ -11,6 +11,7 @@ itsdangerous
 Jinja2
 MarkupSafe
 Werkzeug
-keras.models.load_model
+keras.models
 twilio==7.12.1
+h5
 
