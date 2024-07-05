@@ -5,7 +5,6 @@ from keras.optimizers import Adam, Adamax
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
-from waitress import serve
 import h5py
 # model = tf.keras.models.load_model("models/lung.h5", compile=False)
 with h5py.File('models/lung.h5' , 'r') as model :
@@ -46,7 +45,7 @@ def predict():
     return render_template("result.html" , predictions=predicted_class_label)
 
 if __name__ == '__main__':
-    serve(app, host='0,0,0,0',port=8080)
+    app.run()
 
 
 
