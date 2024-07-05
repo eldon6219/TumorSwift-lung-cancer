@@ -1,1 +1,1 @@
-web: python interview_app.py
+web: python app.py
