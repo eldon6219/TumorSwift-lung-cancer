@@ -6,9 +6,9 @@ from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 import pickle 
+import joblib 
 
-with open('colon_lung.pkl','rb')as file:
-    model=pickle.load(file)
+model=joblib.load("colon_lung.pkl")
 
 
 class_labels = ['Colon Adenocarcinoma','Colon Benign Tissue','Lung Adenocarcinoma','Lung Benign Tissue','Lung Squamous Cell Carcinoma']
