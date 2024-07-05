@@ -15,4 +15,6 @@ Werkzeug
 keras.models
 twilio==7.12.1
 h5
+cuda toolkit==7.0 
+cuDNN==v3
 
