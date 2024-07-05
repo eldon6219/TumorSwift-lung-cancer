@@ -5,11 +5,10 @@ from keras.optimizers import Adam, Adamax
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
-import h5py
-# model = tf.keras.models.load_model("models/lung.h5", compile=False)
-with h5py.File("models/lung.h5" , 'r') as model :
-    model = load_model(model)  
-    model.compile(Adamax(learning_rate= 0.001), loss= 'categorical_crossentropy', metrics= ['accuracy'])
+
+model = load_model("models/lung.h5", compile=False)
+ 
+model.compile(Adamax(learning_rate= 0.001), loss= 'categorical_crossentropy', metrics= ['accuracy'])
 
 
 class_labels = ['Colon Adenocarcinoma','Colon Benign Tissue','Lung Adenocarcinoma','Lung Benign Tissue','Lung Squamous Cell Carcinoma']
