@@ -5,10 +5,10 @@ from keras.optimizers import Adam, Adamax
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
+import pickle 
 
-model = load_model("models/lung.h5", compile=False)
- 
-model.compile(Adamax(learning_rate= 0.001), loss= 'categorical_crossentropy', metrics= ['accuracy'])
+with open('models/colon_lung.pkl','rb')as file:
+    model=pickle.load(file)
 
 
 class_labels = ['Colon Adenocarcinoma','Colon Benign Tissue','Lung Adenocarcinoma','Lung Benign Tissue','Lung Squamous Cell Carcinoma']
@@ -44,7 +44,7 @@ def predict():
     return render_template("result.html" , predictions=predicted_class_label)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=False)
 
 
 
