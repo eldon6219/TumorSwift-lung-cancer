@@ -7,7 +7,7 @@ from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 import pickle 
 
-with open('models/colon_lung.pkl','rb')as file:
+with open('colon_lung.pkl','rb')as file:
     model=pickle.load(file)
 
 
