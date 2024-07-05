@@ -12,7 +12,17 @@ import joblib
 # model.compile(Adamax(learning_rate= 0.001), loss= 'categorical_crossentropy', metrics= ['accuracy'])
 # with open('models/colon_lung.pkl','rb')as file:
     # model=pickle.load(file)
-model=joblib.load("https://github.com/eldon6219/TumorSwift-lung-cancer/blob/main/colon_lung.pkl")
+import requests
+
+
+url = "https://github.com/eldon6219/TumorSwift-lung-cancer/blob/main/colon_lung.pkl?raw=true"
+response = requests.get(url, stream=True)
+
+with open("colon_lung.pkl", "wb") as f:
+    for chunk in response.iter_content(1024):
+        f.write(chunk)
+
+model = joblib.load("colon_lung.pkl")
     
     
 class_labels = ['Colon Adenocarcinoma','Colon Benign Tissue','Lung Adenocarcinoma','Lung Benign Tissue','Lung Squamous Cell Carcinoma']
