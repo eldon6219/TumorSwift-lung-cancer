@@ -8,7 +8,7 @@ from keras.models import load_model
 import h5py
 # model = tf.keras.models.load_model("models/lung.h5", compile=False)
 with h5py.File('models/lung.h5' , 'r') as model :
-    model = tf.keras.models.load_model(model)  
+    model = load_model(model)  
     model.compile(Adamax(learning_rate= 0.001), loss= 'categorical_crossentropy', metrics= ['accuracy'])
 
 
