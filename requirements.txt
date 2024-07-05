@@ -12,3 +12,7 @@ Jinja2
 MarkupSafe
 Werkzeug
 TensorRT
+keras.preprocessing
+keras.applications.efficientnet
+keras.preprocessing.image
+keras.models.load_model
