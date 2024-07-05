@@ -8,6 +8,4 @@ gunicorn==22.0.0
 Jinja2
 MarkupSafe
 Werkzeug
-TensorRT
-WSGI  
 importlib.bootstrap
