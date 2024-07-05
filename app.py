@@ -15,33 +15,34 @@ class_labels = ['Colon Adenocarcinoma','Colon Benign Tissue','Lung Adenocarcinom
 
 app = Flask(__name__) 
 
-    @app.route('/' , methods=['GET'])
-    def hello_world():
-    return render_template("index.html")
+@app.route('/', methods=['GET'])
+def hello_world():
+return render_template("index.html")
 
-    @app.route('/predict' , methods=['POST'])
-    def predict():
+ @app.route('/predict' , methods=['POST'])
+ def predict():
 
-        # Get the values from the form in the request
-        imagefile=request.files['imagefile']
-        image_path = "./img/" + imagefile.filename
-        imagefile.save(image_path)
+# Get the values from the form in the request
+imagefile=request.files['imagefile']
+image_path = "./img/" + imagefile.filename
+imagefile.save(image_path)
 
-        image = load_img(image_path , target_size=(224,224,3))
-        image = img_to_array(image)
-        image = np.expand_dims(image, axis=0)
-
-
-        prediction = model.predict(image)
-        score = tf.nn.softmax(prediction[0])
-        predicted_class_index = np.argmax(score)
-        predicted_class_label = class_labels[predicted_class_index]
+ image = load_img(image_path , target_size=(224,224,3))
+ image = img_to_array(image)
+ image = np.expand_dims(image, axis=0)
 
 
-        return render_template("result.html" , predictions=predicted_class_label)
+ prediction = model.predict(image)
+ score = tf.nn.softmax(prediction[0])
+ predicted_class_index = np.argmax(score)
+ predicted_class_label = class_labels[predicted_class_index]
+
+
+ return render_template("result.html" , predictions=predicted_class_label)
 
 if __name__ == '__main__':
     app.run(debug=False )
+
 
 
 
