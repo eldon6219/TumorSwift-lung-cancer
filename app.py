@@ -4,7 +4,6 @@ from flask import Flask , render_template , request
 from keras.optimizers import Adam, Adamax
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
-import os 
 from keras.models import load_model
 model = load_model("models/lung.h5")
 model.compile(Adamax(learning_rate= 0.001), loss= 'categorical_crossentropy', metrics= ['accuracy'])
@@ -42,8 +41,7 @@ def predict():
     return render_template("result.html" , predictions=predicted_class_label)
 
 if __name__ == '__main__':
-    port = os.environ.get("PORT" ,8080) 
-    app.run(debug=False , host="0,0,0,0" , port=port)
+    app.run(debug=False )
 
 
 
