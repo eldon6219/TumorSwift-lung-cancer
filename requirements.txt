@@ -1,6 +1,6 @@
-Flask==3.0.3
+Flask
 Pandas    
-NumPy==2.0.0    
+NumPy   
 Requests  
 Scikit-learn
 Keras
