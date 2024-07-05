@@ -13,6 +13,6 @@ MarkupSafe
 Werkzeug
 TensorRT
 keras.preprocessing==1.1.2
-keras.applications.efficientnet
+keras.applications.efficientnet==1.1.2
 keras.preprocessing.image
 
